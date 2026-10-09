@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MS_WEB_Project_46596r.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Styles/styles.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+        <div class="navigation">
+            <ul>
+                <li><a runat="server" href="~/">Главна страница</a></li>
+                <li><a runat="server" href="~/Gallery.aspx">Галерия</a></li>
+                <li><a runat="server" href="~/About.aspx">За нас</a></li>
+                <li><a runat="server" href="~/Services.aspx">Услуги</a></li>
+                <li><a runat="server" href="~/Contact.aspx">Контакти</a></li>
+                <li><a runat="server" href="~/Registration.aspx">Регистрация</a></li>
+                <li>
+                    <asp:HyperLink NavigateUrl="~/UserList.aspx" Text="Регистрираните потребители" runat="server" /></li>
+            </ul>
+        </div>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+        <div class="footer">
+            <div class="container">
+                <div class="footer-section">
+                    <h4>За Нас</h4>
+                    <p>Нашият фотографски сайт предлага професионални фотографски услуги. Специализира се в снимане на събития, портрети и пейзажи. Нашата мисия е да уловим вашите незабравими моменти със зашеметяващи изображения.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><strong>Имейл:</strong> contact@yourphotographysite.com</p>
+                    <p><strong>Телефон:</strong> (123) 456-7890</p>
+                    <p><strong>Адрес:</strong> 123 Main St, Your City, Your Country</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="/Default.aspx">Начална страница</a></li>
+                        <li><a href="/gallery.aspx">Галерия</a></li>
+                        <li><a href="/about.aspx">За Нас</a></li>
+                        <li><a href="/services.aspx">Услуги</a></li>
+                        <li><a href="/contact.aspx">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Последвай ни</h4>
+                    <p>Свържете се с нас тук:</p>
+                    <a href="http://facebook.com/yourphotographysite" target="_blank">Facebook</a> |
+            <a href="http://instagram.com/yourphotographysite" target="_blank">Instagram</a> |
+            <a href="http://twitter.com/yourphotographysite" target="_blank">Twitter</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Легалност</h4>
+                    <a href="/terms.aspx">Условия за ползване</a> |
+            <a href="/privacy.aspx">Политика за поверителност</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Автпрски права &copy; ще те съдя, 2024. Всички права запазени.</p>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var typewriterText = document.getElementById('typewriter-text');
+            var textToType = "Добре дошли в нашия сайт за фотография";
+            var typingDelay = 150; // Milliseconds
+            var currentCharIndex = 0;
+            typewriterText.textContent = "";
+
+            function typeChar() {
+                if (currentCharIndex < textToType.length) {
+                    typewriterText.textContent += textToType.charAt(currentCharIndex);
+                    currentCharIndex++;
+                    setTimeout(typeChar, typingDelay);
+                }
+            }
+
+            typeChar(); // Start typing
+        });
+    </script>
+</body>
+</html>
